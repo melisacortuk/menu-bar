@@ -1,0 +1,272 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --first-color: hsl(276, 60%, 70%);
+  --first-color-alt: hsl(269, 89%, 27%);
+  --dark-color: hsl(281, 63%, 10%);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Open Sans', sans-serif;
+  --nav-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --nav-font-size: 1rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  background:linear-gradient(#8962A4, #CDABE5);
+  height: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  margin: 0 1.5rem;
+}
+
+/*===== HEADER =====*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1rem;
+  background-color: #FFF;
+  z-index: var(--z-fixed);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.header-logo {
+  color: var(--dark-color);
+}
+
+.header-toggle {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--first-color);
+    width: 80%;
+    height: 100vh;
+    padding: 2rem 0;
+    z-index: var(--z-fixed);
+    transition: .5s;
+    overflow-y: auto;
+  }
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.nav-img {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.nav-name {
+  display: block;
+  font-size: var(--nav-font-size);
+  color: #FFF;
+}
+
+.nav-item {
+  margin-bottom: 2rem;
+}
+
+.nav-link {
+  color: var(--first-color-alt);
+}
+
+.nav-link:hover {
+  color: #FFF;
+}
+
+/* show menu */
+.show-menu {
+  left: 0;
+}
+
+/* active link */
+.active-link {
+  color: #FFF;
+}
+
+/*=== Dropdown ===*/
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-icon {
+  font-size: 1.3rem;
+  transition: .5s;
+}
+
+.dropdown-item {
+  margin: 1rem 0;
+}
+
+.dropdown-menu {
+  margin: 1rem 0 0 1rem;
+  display: none;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-link:hover >.dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/*==== MEDIA QUERIES ====*/
+@media screen and (min-width: 576px) {
+  .nav {
+    width: 288px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .header {
+    height: calc(var(--header-height) + 1rem);
+  }
+
+  .header-logo, .header-toggle {
+    display: none;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-profil {
+    flex-direction: row;
+    text-align: initial;
+    margin-bottom: 0;
+  }
+
+  .nav-img {
+    width: 50px;
+    height: 50px;
+    margin-right: .5rem;
+    margin-bottom: 0;
+  }
+
+  .nav-name {
+    color: var(--dark-color);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 0 1.5rem;
+  }
+
+  .nav-link {
+    color: var(--dark-color);
+  }
+
+  .active-link {
+    color: var(--first-color-alt);
+  }
+
+  .nav-link:hover {
+    color: var(--first-color);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    margin: 0;
+    top: calc(var(--header-height) + 1rem);
+    padding: .5rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+  }
+
+  .dropdown-item {
+    margin: .5rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

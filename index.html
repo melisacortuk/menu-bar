@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--============= CSS =============-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Responsive Menu Dropdown</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="header-logo">Miranda</a>
+      <div class="header-toggle" id="header-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+
+      <nav class="nav" id="nav">
+        <div class="nav-content bd-grid">
+          <a href="#" class="nav-profil">
+            <div class="nav-img">
+              <img src="assets/img/profile.jpg" alt="">
+            </div>
+
+            <div>
+              <span class="nav-name">Miranda</span>
+              <span class="nav-name">Stan</span>
+            </div>
+          </a>
+        <div class="nav-menu">
+          <ul class="nav-list">
+           <li class="nav-item">
+             <a href="#" class="nav-link active-link">Anasayfa</a>
+           </li>
+           <li class="nav-item">
+             <a href="#" class="nav-link">Hakkımda</a>
+           </li>
+           <li class="nav-item">
+             <a href="#" class="nav-link">İletişim</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a href="#" class="nav-link dropdown-link">Blog <i class="ri-arrow-drop-down-line dropdown-icon"></i></a>
+             <ul class="dropdown-menu">
+               <li class="dropdown-item"><a href="#" class="nav-link">JavaScript Öğrenirken Neler Yapıyorum?</a></li>
+               <li class="dropdown-item"><a href="#" class="nav-link">Front-End Sürecim</a></li>
+               <li class="dropdown-item"><a href="#" class="nav-link">Projelerim Hakkında</a></li>
+             </ul>
+           </li>
+        </ul>
+        </div>
+       </div>
+      </nav>
+    </header>
+
+    <!--============= MAIN JS =============-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
